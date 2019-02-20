@@ -28,3 +28,4 @@ fi
 done
 tar -cf "$archName".tar "$dirName" >/dev/null 2>&1
 rm -R "$dirName" >/dev/null 2>&1
+#
