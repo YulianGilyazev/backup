@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dirName="$1"
+archName="$2"
 myDir=`pwd`
 mkdir $dirName
 extList=$@
@@ -8,7 +9,7 @@ lol=0
 for ext in $extList
 do
 let lol=lol+1
-if [[ lol -ne 1 ]]
+if [[ lol -ge 3 ]]
 then
 files=$(find "$myDir")
 for file in $files
@@ -25,5 +26,5 @@ fi
 done
 fi
 done
-tar -cf "$dirName".tar "$dirName" >/dev/null 2>&1
+tar -cf "$archName".tar "$dirName" >/dev/null 2>&1
 rm -R "$dirName" >/dev/null 2>&1
